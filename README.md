@@ -1,160 +1,75 @@
-# Module 1 Final Project
+![Microsoft Movie Studio](./images/microsoft_logo.png)
 
-## Introduction
+# Microsoft Goes to the Movies - A Data-Driven Approach to the Movie Industry
 
-In this lesson, we'll review all of the guidelines and specifications for the final project for Module 1.
+**Author**: [Chris Choi](mailto:chris@choi.is)
 
-## Objectives
+## Overview
 
-You will be able to:
+This project analyzes key trends in the global movie industry for a hypothetical situation in which[Microsoft](https://www.microsoft.com) seeks to start a successful movie studio. Descriptive analysis of online movie databases shows that the time of year the movie is released as well as its genre and duration are key factors predicting high gross sales and profits. The hypothetical Microsoft Movie Studio can use this analysis to optimize production parameters as well as distribution and marketing strategies to increase the probability for success at the box office.
 
-* Describe all required aspects of the final project for Module 1
-* Describe all required deliverables
-* Describe what constitutes a successful project
-* Describe what the experience of the project review should be like
+## Business Problem
 
-## Final Project Summary
+Microsoft Movie Studio may be able to improve resource allocation and decision-making for its movie studio in terms of critical production parameters such as choice of genre and duration. Additionally, data analysis can help guide distribution and marketing decisions such as what time of year to release the movie. Doing so will reduce the probability of making costly mistakes such as investing heavily in a movie production only to, say, release it in the off-season. 
 
-You've made it all the way through the first module of this course - take a minute to celebrate your awesomeness!
+## Data
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-1-project-v2-1/master/awesome.gif)
+This project uses datasets derived from the popular movie websites IMDb.com (Internet Movie Database) and The-Numbers.com. The data files collectively provide the title, release date, production budget, domestic and global sales, and other relevant figures for thousands of movies released from 1915 to 2019.
 
-All that remains in Module 1 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
+## Methods
 
-## The Project
+This project uses descriptive analysis, including description of trends over time and by category. The products of this analysis provide a useful overview of the movie industry's key consumer trends and preferences. 
 
-Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry.
-Your team is charged with doing data analysis and creating a presentation that explores what type of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the CEO can use when deciding what type of films they should be creating.
+## Results
 
-# The Dataset
+The best selling and most profitable months of the year are May, June, July, and November. The worst performing months of the year are the fall months (Aug, Sep, Oct) and January. Notably, the ratio between production budget and gross sales remains relatively constant.
 
-You may scrape or make API calls to get additional data, but included in the repository (in the folder `zippedData`) is some movie-related data from:
-* Box Office Mojo
-* IMDB
-* Rotten Tomatoes
-* TheMovieDB.org
+![SalesByMonth](./images/SalesByMonth.png)
 
-# The Deliverables
+This chart is similar to the previous chart, except it groups the average movie sales by seasons/quarters instead of months. The summer season (Q2) is by far the best performing season in terms of revenues and profits, followed by winter (Q4). Spring (Q1) and fall (Q2) are virtually identical.
 
-For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
+![SalesBySeason](./images/SalesBySeason.png)
 
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
-4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**
-5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
+The most profitable genres (defined here as earning over 100 M in profit) are Animation, Adventure, Sci-Fi, Musical, Fantasy, Action, and Family. The two most profitable genres are Animation and Adventure with over 200 M in profit. The least profitable genres are War, History, Documentary, Western and News.
 
-Note: On-campus students may have different requirements, please speak with your instructor.
+![ProfitsByGenre](./images/ProfitsByGenre.png)
 
-### Jupyter Notebook Must-Haves
+The median runtime value is found (100 minutes) and used to divide the dataset into two bins: short and long. The average short movie vs. the average long movie are then compared. Long movies (duration > 100 minutes) are almost twice as profitable as short movies (duration < 100 minutes). 
 
-For this project, your Jupyter Notebook should meet the following specifications:
+![ProfitsByMovieLength.png](./images/ProfitsByMovieLength.png)
 
-#### Organization/Code Cleanliness
+## Conclusions
 
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
+The results of this data analysis project leads to three key actionable insights for Microsoft to achieve financial success in the global movie industry:
 
-#### Visualizations & EDA
+- **Target the summer months (and November).** These four months exhibit unusually high sales numbers: May, June, July, and November. As a result, Microsoft should target these months for new movie releases as the data suggests consumer activity is elevated during these months. The months of August, September, and October should conversely be avoided unless a more advanced/targeted business strategy is being considered.
+- **Aim for fictional genres with escapist content; avoid non-fiction** The most profitable genres are Animation, Adventure, Sci-Fi, Musical, Fantasy, Action, and Family. The least profitable are War, History, Documentary, Western and News. This analysis suggests Microsoft should release fiction movies with elaborate narratives, production sets and special effects, as they appear more likely to draw large audiences.
+- **Longer movies are more profitable.** Movies with a duration above the median (100 minutes) achieve returns almost twice that of shorter duration movies (under 100 minutes).
+- **OVERALL:** Microsoft should focus on releasing longer-than-average features and should explore franchises with deep casts and long storylines that can be extended over multiple releases. 
 
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+### Next Steps
 
+Further analyses could yield additional insights to further improve sales and profit projections:
 
-### Non-Technical Presentation Must-Haves
+- **Conduct a more fine-grained analysis of release time data.** See if a pattern can be observed within the most profitable months, such as whether certain weeks within May, June, July, and November tend to outperform others, or if a mid-week release schedule is better than an end-of-week schedule.
+- **Further explore the relationship between release time, genre, and length.** For example, do the summer month movies perform better because they tend to represent the most profitable genres and have greater durations? 
+- **Model impact of franchise status on profit measures.** Movie franchises, particularly those based on the most popular genres and released in the busy season, may exhibit greater profitability than one-off movies.
 
-Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to make decisions for creating movies.
+## For More Information
 
-Your presentation should:
+See the full analysis in the [Jupyter Notebook](./movie_industry_analysis.ipynb) or review this [presentation](./movie_industry_presentation.pdf).
 
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
+For additional info, contact Chris Choi at [chris@choi.is](mailto:chris@choi.is)
 
-### Blog Post Must-Haves
+![logo](./images/microsoft_logo.jpg)
 
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
+## Repository Structure
 
-
-
-## The Process
-(Note: On-campus students may have different processes, please speak with your instructor)
-
-### 1. Getting Started
-
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
-
-Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
-
-Once you're done with the 10 sections in module 1, please start on the project. Do that by forking this repository, cloning it locally, and working in the `student.ipynb` file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
-
-### 2. The Project Review
-
-_Note: On-campus students may have different review processes, please speak with your instructor._
-
-> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
-
-#### What to expect from the Project Review
-
-Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
-
-The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
-
-#### 1. Deliver your PDF presentation to a non-technical stakeholder.
-In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
-
-In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
-
-#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
-    * "How did you pick the question(s) that you did?"
-    * "Why are these questions important from a business perspective?"
-    * "How did you decide on the data cleaning options you performed?"
-    * "Why did you choose a given method or library?"
-    * "Why did you select those visualizations and what did you learn from each of them?"
-    * "Why did you pick those features as predictors?"
-    * "How would you interpret the results?"
-    * "How confident are you in the predictive quality of the results?"
-    * "What are some of the things that could cause the results to be wrong?"
-
-Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
-
-If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
-* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
-* Submit an improved version
-* Meet again for another Project Review
-
-What won't happen:
-* You won't be yelled at, belittled, or scolded
-* You won't be put on the spot without support
-* There's nothing you can do to instantly fail or blow it
-
-**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
-
-
-## Submitting your Project
-
- You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
-
- 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
-_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
-2. **Blog Post:** Include a link to your blog post.
-3. **Record Walkthrough:** Include a link to your video walkthrough.
-
- Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
-
-## Grading Rubric
-
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-1-project-v2-1/blob/master/module1_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
-
-
-## Summary
-
-The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
-
-The projects are serious and important. They are not graded, but they can be passed and they can be failed. Take the project seriously, put the time in, ask for help from your peers or instructors early and often if you need it, and treat the review as a job interview and you'll do great. We're rooting for you to succeed and we're only going to ask you to take a review again if we believe that you need to. We'll also provide open and honest feedback so you can improve as quickly and efficiently as possible.
-
-Finally, this is your first project. We don't expect you to remember all of the terms or to get all of the answers right. If in doubt, be honest. If you don't know something, say so. If you can't remember it, just say so. It's very unusual for someone to complete a project review without being asked a question they're unsure of, we know you might be nervous which may affect your performance. Just be as honest, precise and focused as you can be, and you'll do great!
+```
+├── data
+├── images
+├── README.md
+├── movie_industry_presentation.pdf
+├── movie_industry_analysis.ipynb
+├── budgets_genre_df.csv
+```
